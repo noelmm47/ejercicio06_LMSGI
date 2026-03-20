@@ -26,7 +26,7 @@
     // break para que no itere infinitamentwe
 
     foreach($usuarios as $usuario) {
-        if($usuario["USER"] == $usuario_post && $usuario["PASS"] == $contraseña_post){
+        if($usuario["USER"] == $usuario_post && $usuario["CONTRASENYA"] == $contraseña_post){
             header("Location: clientes.php");
         break;
         }

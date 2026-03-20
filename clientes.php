@@ -18,7 +18,7 @@
 
     <ul>
         <?php foreach($clientes as $cliente): ?>
-            <li><?php echo $cliente["NOMBRE"] ?> |
+            <li><?php echo $cliente["NOMBRE"] . " " . $cliente["APELLIDOS"]?> |
             <a href="editar_usuario.php?id=<?php echo $cliente["ID"] ?>">Editar</a> |
             <a href="borrar_usuario.php?id=<?= $cliente["ID"] ?>">Borrar</a>
         </li>

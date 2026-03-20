@@ -10,11 +10,7 @@
 		WHERE ID=$insertados[0]");
 	}
 	
-	//echo $idUser;
 	$clientes = $conexion -> query("SELECT * FROM CLIENTES WHERE ID=$idUser") ->fetch_all(MYSQLI_ASSOC);
-	print_r($clientes);
-	/*foreach($cliente as $dato)
-		echo $dato["ID"];*/
 	/* Asegurarse que el nombre de la tabla es exactamente igual en tu BBDD */
 ?>
 
