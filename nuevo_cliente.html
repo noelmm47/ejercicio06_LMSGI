@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+	</head>
+	<body>
+		<h1>Formulario de recogida de datos</h1>
+        <p>Completa los siguientes campos:</p>
+		<form action="insertar_cliente.php" method="POST">
+			<label for="nombre">Nombre:</label>
+			<input type="text" name="nombre" required><br><br>
+			<label for="apellidos">Apellidos:</label>
+			<input type="text" name="apellidos" required><br><br>
+            <label for="dni">DNI:</label>
+			<input type="text" name="dni" required><br><br>
+            <label for="direccion">Dirección:</label>
+			<input type="text" name="direccion" required><br><br>
+            <label for="poblacion">Población:</label>
+			<input type="text" name="poblacion" required><br><br>
+			<button type="submit">Enviar</button>
+		</form>
+	</body>
+</html>
