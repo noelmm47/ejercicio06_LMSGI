@@ -1,1 +1,3 @@
 LORENA: Revisado y funciona. Quedaría añadir la database de CLIENTES. ¿Alguien sabe/puede hacerlo?. Del Editar: ¿Os parece dejarlo más limpio, quitando la línea de arriba con los valores? Cuestión de gustos...
+NOEL: Sí, eso que dices era una línea de debug, ya está quitado. Por lo demás, no hace falta exportar la base de datos (Gonzalo me dijo que usará la suya)
+y el resto funciona bien.
