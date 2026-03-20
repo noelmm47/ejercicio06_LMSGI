@@ -1,1 +1,2 @@
-<LORENA> Revisado y funcion. Quedaría añadir la database de CLIENTES. ¿Alguien sabe/puede hacerlo?
+<LORENA> Revisado y funciona. Quedaría añadir la database de CLIENTES. ¿Alguien sabe/puede hacerlo?.
+        Del Editar: ¿Os parece dejarlo más limpio, quitando la línea de arriba con los valores? Cuestión de gustos...
