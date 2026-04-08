@@ -27,7 +27,7 @@
 
     foreach($usuarios as $usuario) {
         if($usuario["USER"] == $usuario_post && $usuario["PASS"] == $contraseña_post){
-            header("Location: clientes.php");
+            header("Location: inicio.html");
         break;
         }
     }
