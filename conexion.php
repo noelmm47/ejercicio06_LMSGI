@@ -16,14 +16,13 @@
     //Recojo como $usuario_post cada usuario del formulario enviado como Post. 
 
     $usuario_post = $_POST["usuario"];
-    $contraseña_post = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
+    $contraseña_post = hash("sha256", $_POST["contraseña"]);
 
     //recorro bucle y veo si el usuario&contraseña coinciden con los del array bbdd para mandarlo a clientes.php"
     // break para que no itere infinitamentwe
 
     foreach($usuarios as $usuario) {
-        if($usuario["USER"] == $usuario_post && 
-				password_verify($usuario["PASS"], $contraseña_post){
+        if($usuario["USER"] == $usuario_post && $usuario["PASS"] == $contraseña_post){
 			session_start();
 			$_SESSION['USER'] = $usuario_post;
             header("Location: intermedio.php");

@@ -1,9 +1,7 @@
 <?php
+	session_start();
 	if(!isset($_SESSION['USER']))
-		header("login.html");
-		
-	if(isset($_POST['Dir']){
-		header($_POST['Dir']);
+		header("Location: login.html");
 ?>
 
 <!DOCTYPE html>
