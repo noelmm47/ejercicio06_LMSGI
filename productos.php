@@ -275,7 +275,7 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
 
 				<a href="productos.php?tipo=<?= $tipo ?>&editar=<?= $item["ID"] ?>"> Editar</a> |  <!-- enlaces para editar, borrar o reservar -->
 				<a href="productos.php?tipo=<?= $tipo ?>&borrar=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres borrar?')"> Borrar</a> |  <!-- pedimos confirmacion -->
-				<a href="reservar.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar</a>
+				<a href="reservar.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar</a> <!-- envia el tipo que puede ser "libros" o "peliculas" y su id -->
 			</li>
 
 		<?php endforeach; ?>
