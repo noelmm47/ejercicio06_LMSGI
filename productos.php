@@ -258,7 +258,7 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
 					?> <!-- sacamos los primeros 4 caracteres porque alguien decidio que la fecha de libro y la de película no compartían el mismo tipo de dato... -->
 
 					<?php 
-						$imagen = "imagenes/P" . str_pad($item["ID"], 2, "0", STR_PAD_LEFT) . ".jpg";
+						$imagen = "images/P" . str_pad($item["ID"], 2, "0", STR_PAD_LEFT) . ".jpg";
 						if (file_exists($imagen)) {
 							echo '<img src="' . $imagen . '" alt="Portada película" width="80">';
 						}
@@ -273,9 +273,9 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
 
 				<?php endif; ?>
 
-				<a href="productos.php?tipo=<?= $tipo ?>&editar=<?= $item["ID"] ?>"> Editar </a>  <!-- enlaces para editar, borrar o reservar -->
-				<a href="productos.php?tipo=<?= $tipo ?>&borrar=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres borrar?')"> Borrar </a>  <!-- pedimos confirmacion -->
-				<a href="reservar.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar </a>
+				<a href="productos.php?tipo=<?= $tipo ?>&editar=<?= $item["ID"] ?>"> Editar</a> |  <!-- enlaces para editar, borrar o reservar -->
+				<a href="productos.php?tipo=<?= $tipo ?>&borrar=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres borrar?')"> Borrar</a> |  <!-- pedimos confirmacion -->
+				<a href="reservar.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar</a>
 			</li>
 
 		<?php endforeach; ?>
