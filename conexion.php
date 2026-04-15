@@ -27,7 +27,9 @@
 			$_SESSION['USER'] = $usuario_post;
             header("Location: intermedio.php");
 			break;
-        }
+        }else{
+			header("Location: login.html");
+		}
     }
 
 ?>
