@@ -17,7 +17,7 @@
 		<h3>Clientes:</h3>
 		<br>
 		<p>Agrega nuevos clientes a la base de datos, modifica o borra los ya existentes.</p>
-		<form action="clientes.php" method="POST">
+		<form action="clientes.php">
 			<button type="submit">Acceder</button>
 		</form>
 		<br>
@@ -25,7 +25,7 @@
 		<h3>Catálogo:</h3>
 		<br>
 		<p>Gestiona la reserva y préstamo de libros y películas, agrega nuevos títulos al catálogo.</p>
-		<form action="productos.php" method="POST">
+		<form action="productos.php" method="GET">
 		<button type="submit" name="acceso" value="libros">Libros</button>
 		<br>
 		<br>

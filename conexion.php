@@ -2,6 +2,10 @@
 
     include "conexion_bbdd.php";
     //require "conexion_bbdd.php"; da fallo si no encuentra fichero o ese falla
+	
+	session_start();
+	if (!isset($_SESSION['USER']))
+			header ("Location: login.html");
     
     $consulta = "SELECT * from USUARIOS"; //devuelve array con toda la info de los usuarios
 
@@ -23,7 +27,6 @@
 
     foreach($usuarios as $usuario) {
         if($usuario["USER"] == $usuario_post && $usuario["PASS"] == $contraseña_post){
-			session_start();
 			$_SESSION['USER'] = $usuario_post;
             header("Location: intermedio.php");
 			break;

@@ -1,6 +1,10 @@
 <?php
 
     include "conexion_bbdd.php";
+	
+	session_start();
+	if (!isset($_SESSION['USER']))
+		header ("Location: login.html");
 
     $nombre = $_POST["nombre"];
     $apellidos = $_POST["apellidos"];

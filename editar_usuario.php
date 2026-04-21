@@ -1,5 +1,9 @@
 <?php
 	include "conexion_bbdd.php";
+	
+	session_start();
+	if (!isset($_SESSION['USER']))
+			header ("Location: login.html");
 
 	$idUser = $_GET["id"] ?? $_POST["ID"];
 	

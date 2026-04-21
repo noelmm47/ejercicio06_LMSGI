@@ -1,5 +1,10 @@
 <?php
 include "conexion_bbdd.php";
+
+session_start();
+if (!isset($_SESSION['USER']))
+	header ("Location: login.html");
+	
 header('Content-Type: text/html; charset=UTF-8');
 
 $tipo = $_POST["acceso"] ?? $_GET["tipo"] ?? "libros";

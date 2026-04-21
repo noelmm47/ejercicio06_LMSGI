@@ -1,6 +1,10 @@
 <?php
 
     include "conexion_bbdd.php";
+	
+	session_start();
+	if (!isset($_SESSION['USER']))
+		header ("Location: login.html");
     
     // recogemos producto a reservar
     $tipoProducto = $_GET["tipo"];
