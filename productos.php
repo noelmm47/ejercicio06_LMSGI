@@ -280,7 +280,13 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
 
 				<a href="productos.php?tipo=<?= $tipo ?>&editar=<?= $item["ID"] ?>"> Editar </a>  <!-- enlaces para editar, borrar o reservar -->
 				<a href="productos.php?tipo=<?= $tipo ?>&borrar=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres borrar?')"> Borrar </a>  <!-- pedimos confirmacion -->
-				<a href="eleccion.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar </a>
+
+				<?php echo $item["ESTADO"] ?><br>
+				<?php if ($item["ESTADO"] != "Reservado"): ?>
+					<a href="eleccion.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>">Reservar</a>
+				<?php else: ?>
+					<p style="color:red;">No disponible</p>
+				<?php endif; ?>
 			</li>
 
 		<?php endforeach; ?>
