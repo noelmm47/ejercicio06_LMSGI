@@ -2,7 +2,7 @@
 
     include "conexion_bbdd.php";
 
-	session_start();
+    session_start();
 	if (!isset($_SESSION['USER']))
 		header ("Location: login.html");
 
