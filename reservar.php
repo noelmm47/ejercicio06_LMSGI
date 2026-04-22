@@ -2,6 +2,10 @@
 
     include "conexion_bbdd.php";
 
+	session_start();
+	if (!isset($_SESSION['USER']))
+		header ("Location: login.html");
+
     $tipoProducto = $_GET["tipo"];
     $idProducto = $_GET["id"];
     $idCliente = $_GET["idCliente"];
