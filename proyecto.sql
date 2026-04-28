@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: bbdd
--- Tiempo de generación: 28-04-2026 a las 17:19:00
+-- Tiempo de generación: 28-04-2026 a las 19:25:22
 -- Versión del servidor: 5.7.44
 -- Versión de PHP: 8.3.26
 
@@ -134,16 +134,15 @@ INSERT INTO `LIBROS` (`ID`, `TITULO`, `AUTOR_ID`, `GENERO`, `EDITORIAL`, `PAGINA
 (17, 'Crónica de una muerte anunciada', 17, 'Policíaco', 'Debolsillo', 156, '1981-01-01', 9.95, '/images/L17.jpg', 'Disponible'),
 (18, 'El nombre del viento', 18, 'Fantástico', 'Debolsillo', 880, '2007-01-01', 22.00, '/images/L18.jpg', 'Disponible'),
 (19, 'La historia interminable', 19, 'Fantástico', 'Alfaguara', 496, '1979-01-01', 15.00, '/images/L19.jpg', 'Disponible'),
-(20, 'La ley de la calle', 4, 'Drama', 'Alfaguara', 112, '1975-01-01', 10.00, '', 'Disponible'),
-(21, 'Nacidos de la bruma: El imperio final', 20, 'Fantástico', 'Nova', 841, '2006-01-01', 20.00, '/images/L20.jpg', 'Disponible'),
-(22, '¿Sueñan los androides con ovejas eléctricas?', 21, 'Ciencia ficción', 'Minotauro', 272, '1968-01-01', 10.00, '/images/L21.jpg', 'Disponible'),
-(23, 'El príncipe de la niebla', 22, 'Fantástico', 'Edebé', 240, '1993-01-01', 14.00, '/images/L22.jpg', 'Disponible'),
-(24, 'La leyenda del rey errante', 23, 'Fantástico', 'SM', 560, '2004-01-01', 21.00, '/images/L23.jpg', 'Disponible'),
-(25, 'La isla del tesoro', 24, 'Aventuras', 'Edelvives', 288, '1883-01-01', 24.90, '/images/L24.jpg', 'Disponible'),
+(20, 'La ley de la calle', 4, 'Drama', 'Alfaguara', 112, '1975-01-01', 10.00, '/images/L20.jpg', 'Disponible'),
+(21, 'Nacidos de la bruma: El imperio final', 20, 'Fantástico', 'Nova', 841, '2006-01-01', 20.00, '/images/L21.jpg', 'Disponible'),
+(22, '¿Sueñan los androides con ovejas eléctricas?', 21, 'Ciencia ficción', 'Minotauro', 272, '1968-01-01', 10.00, '/images/L22.jpg', 'Disponible'),
+(23, 'El príncipe de la niebla', 22, 'Fantástico', 'Edebé', 240, '1993-01-01', 14.00, '/images/L23.jpg', 'Disponible'),
+(24, 'La leyenda del rey errante', 23, 'Fantástico', 'SM', 560, '2004-01-01', 21.00, '/images/L24.jpg', 'Disponible'),
+(25, 'La isla del tesoro', 24, 'Aventuras', 'Edelvives', 288, '1883-01-01', 24.90, '/images/L25.jpg', 'Disponible'),
 (26, 'Matilda', 25, 'Infantil', 'Loqueleo', 288, '1988-01-01', 10.00, '', 'Disponible'),
 (27, 'El gran Gatsby', 26, 'Drama', 'Austral', 224, '1925-01-01', 11.50, '', 'Disponible'),
-(28, 'Fahrenheit 451', 27, 'Ciencia ficción', 'Debolsillo', 192, '1953-01-01', 12.50, '', 'Disponible'),
-(29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'Disponible');
+(28, 'Fahrenheit 451', 27, 'Ciencia ficción', 'Debolsillo', 192, '1953-01-01', 12.50, '', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -197,8 +196,8 @@ INSERT INTO `PELICULAS` (`ID`, `TITULO`, `AÑO_ESTRENO`, `DIRECTOR`, `ACTORES`, 
 (26, 'El gran Gatsby', '1974-01-01', 'Jack Clayton', 'Robert Redford, Mia Farrow, Bruce Dern, Karen Black, Scott Wilson', 'Drama', 'Película', 27, '', 'Disponible'),
 (27, 'El gran Gatsby', '2000-01-01', 'Robert Markowitz', 'Mira Sorvino, Toby Stephens, Paul Rudd, Martin Donovan, Francie Swift', 'Drama', 'Serie', 27, '', 'Disponible'),
 (28, 'El gran Gatsby', '2013-01-01', 'Baz Luhrmann', 'Leonardo DiCaprio, Tobey Maguire, Carey Mulligan, Joel Edgerton, Isla Fisher', 'Drama', 'Película', 27, '', 'Disponible'),
-(29, 'Fahrenheit 451', '1966-01-01', 'François Truffaut', 'Julie Christie, Oskar Werner, Cyril Cusack, Anton Diffring, Jeremy Spenser, Ann Bell', 'Ciencia ficción', 'Película', 26, '', 'Disponible'),
-(30, 'Fahrenheit 451', '2018-01-01', 'Ramin Bahrani', 'Michael B. Jordan, Michael Shannon, Sofia Boutella, Laura Harrier, Lilly Singh', 'Ciencia ficción', 'Película', 26, '', 'Disponible');
+(29, 'Fahrenheit 451', '1966-01-01', 'François Truffaut', 'Julie Christie, Oskar Werner, Cyril Cusack, Anton Diffring, Jeremy Spenser, Ann Bell', 'Ciencia ficción', 'Película', 28, '', 'Disponible'),
+(30, 'Fahrenheit 451', '2018-01-01', 'Ramin Bahrani', 'Michael B. Jordan, Michael Shannon, Sofia Boutella, Laura Harrier, Lilly Singh', 'Ciencia ficción', 'Película', 28, '', 'Disponible');
 
 -- --------------------------------------------------------
 
