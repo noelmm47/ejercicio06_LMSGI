@@ -34,6 +34,6 @@
             echo "Algo ha pasado. Vuelve sobre tus pasos.<br><br>";
         }
     }
-    echo '<a href="productos.php">Volver a la página principal</a>';
+    echo '<a href="intermedio.php">Volver a la página principal</a>';
 
 ?>
