@@ -258,7 +258,7 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
 					?> <!-- sacamos los primeros 4 caracteres porque alguien decidio que la fecha de libro y la de película no compartían el mismo tipo de dato... -->
 
 					<?php 
-						$imagen = "imagenes/P" . str_pad($item["ID"], 2, "0", STR_PAD_LEFT) . ".jpg";
+						$imagen = "images/P" . str_pad($item["ID"], 2, "0", STR_PAD_LEFT) . ".jpg";
 						if (file_exists($imagen)) {
 							echo '<img src="' . $imagen . '" alt="Portada película" width="80">';
 						}
