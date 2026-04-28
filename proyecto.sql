@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: bbdd
--- Tiempo de generación: 22-04-2026 a las 18:34:19
+-- Tiempo de generación: 28-04-2026 a las 17:19:00
 -- Versión del servidor: 5.7.44
 -- Versión de PHP: 8.3.26
 
@@ -106,6 +106,7 @@ CREATE TABLE `LIBROS` (
   `PAGINAS` int(3) DEFAULT NULL,
   `AÑO` date DEFAULT NULL,
   `PRECIO` decimal(4,2) DEFAULT NULL,
+  `IMAGEN` varchar(200) COLLATE utf8_bin NOT NULL,
   `ESTADO` varchar(10) COLLATE utf8_bin NOT NULL DEFAULT 'Disponible'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -113,35 +114,36 @@ CREATE TABLE `LIBROS` (
 -- Volcado de datos para la tabla `LIBROS`
 --
 
-INSERT INTO `LIBROS` (`ID`, `TITULO`, `AUTOR_ID`, `GENERO`, `EDITORIAL`, `PAGINAS`, `AÑO`, `PRECIO`, `ESTADO`) VALUES
-(1, 'El Señor de los anillos: La comunidad del anillo', 1, 'Fantástico', 'Minotauro', 488, '1954-01-01', 18.00, 'Disponible'),
-(2, 'El viejo y el mar', 2, 'Novela', 'Debolsillo', 208, '1952-01-01', 10.95, 'Disponible'),
-(3, 'Las Crónicas de Narnia: El león, la bruja y el armario', 3, 'Fantástico', 'Destino', 240, '1950-01-01', 15.00, 'Disponible'),
-(4, 'Rebeldes', 4, 'Drama', 'Alfaguara', 224, '1967-01-01', 12.00, 'Disponible'),
-(5, 'Harry Potter y la prisionero de Azkaban', 5, 'Fantástico', 'Salamandra', 264, '1999-01-01', 18.00, 'Disponible'),
-(6, 'Canción de hielo y fuego: Juego de Tronos', 6, 'Fantástico', 'Planeta', 800, '1996-01-01', 20.00, 'Disponible'),
-(7, 'Reencuentro', 7, 'Drama', 'Tusquets', 128, '1971-01-01', 10.00, 'Disponible'),
-(8, 'La verdad sobre el caso Harry Quebert', 8, 'Policíaco', 'Alfaguara', 672, '2012-01-01', 12.95, 'Disponible'),
-(9, 'La sociedad literaria y el pastel de piel de patata de Guernsey', 9, 'Novela epistolar', 'Salamandra', 274, '2007-01-01', 10.00, 'Disponible'),
-(10, 'El mar', 10, 'Fantástico', 'SM', 260, '2015-01-01', 12.95, 'Disponible'),
-(11, 'El curioso incidente del perro a medianoche', 11, 'Novela', 'Salamandra', 270, '2003-01-01', 10.00, 'Disponible'),
-(12, 'La hija del mar', 12, 'Fantástico', 'SM', 112, '1996-01-01', 10.00, 'Disponible'),
-(13, 'Orgullo y prejuicio', 13, 'Novela', 'Penguin', 448, '1813-01-01', 12.00, 'Disponible'),
-(14, 'Martes con mi viejo profesor', 14, 'Novela biográfica', 'Maeva', 143, '1997-01-01', 13.00, 'Disponible'),
-(15, 'Desconocidos', 15, 'Policíaco', 'Edebé', 221, '2018-01-01', 12.00, 'Disponible'),
-(16, 'Nunca seré tu héroe', 16, 'Novela', 'SM', 192, '1998-01-01', 10.95, 'Disponible'),
-(17, 'Crónica de una muerte anunciada', 17, 'Policíaco', 'Debolsillo', 156, '1981-01-01', 9.95, 'Disponible'),
-(18, 'El nombre del viento', 18, 'Fantástico', 'Debolsillo', 880, '2007-01-01', 22.00, 'Disponible'),
-(19, 'La historia interminable', 19, 'Fantástico', 'Alfaguara', 496, '1979-01-01', 15.00, 'Disponible'),
-(20, 'La ley de la calle', 4, 'Drama', 'Alfaguara', 112, '1975-01-01', 10.00, 'Disponible'),
-(21, 'Nacidos de la bruma: El imperio final', 20, 'Fantástico', 'Nova', 841, '2006-01-01', 20.00, 'Disponible'),
-(22, '¿Sueñan los androides con ovejas eléctricas?', 21, 'Ciencia ficción', 'Minotauro', 272, '1968-01-01', 10.00, 'Disponible'),
-(23, 'El príncipe de la niebla', 22, 'Fantástico', 'Edebé', 240, '1993-01-01', 14.00, 'Disponible'),
-(24, 'La leyenda del rey errante', 23, 'Fantástico', 'SM', 560, '2004-01-01', 21.00, 'Disponible'),
-(25, 'La isla del tesoro', 24, 'Aventuras', 'Edelvives', 288, '1883-01-01', 24.90, 'Disponible'),
-(26, 'Matilda', 25, 'Infantil', 'Loqueleo', 288, '1988-01-01', 10.00, 'Disponible'),
-(27, 'El gran Gatsby', 26, 'Drama', 'Austral', 224, '1925-01-01', 11.50, 'Disponible'),
-(28, 'Fahrenheit 451', 27, 'Ciencia ficción', 'Debolsillo', 192, '1953-01-01', 12.50, 'Disponible');
+INSERT INTO `LIBROS` (`ID`, `TITULO`, `AUTOR_ID`, `GENERO`, `EDITORIAL`, `PAGINAS`, `AÑO`, `PRECIO`, `IMAGEN`, `ESTADO`) VALUES
+(1, 'El Señor de los anillos: La comunidad del anillo', 1, 'Fantástico', 'Minotauro', 488, '1954-01-01', 18.00, '/images/L01.jpg', 'Disponible'),
+(2, 'El viejo y el mar', 2, 'Novela', 'Debolsillo', 208, '1952-01-01', 10.95, '/images/L02.jpg', 'Disponible'),
+(3, 'Las Crónicas de Narnia: El león, la bruja y el armario', 3, 'Fantástico', 'Destino', 240, '1950-01-01', 15.00, '/images/L03.jpg', 'Disponible'),
+(4, 'Rebeldes', 4, 'Drama', 'Alfaguara', 224, '1967-01-01', 12.00, '/images/L04.jpg', 'Disponible'),
+(5, 'Harry Potter y la prisionero de Azkaban', 5, 'Fantástico', 'Salamandra', 264, '1999-01-01', 18.00, '/images/L05.jpg', 'Disponible'),
+(6, 'Canción de hielo y fuego: Juego de Tronos', 6, 'Fantástico', 'Planeta', 800, '1996-01-01', 20.00, '/images/L06.jpg', 'Disponible'),
+(7, 'Reencuentro', 7, 'Drama', 'Tusquets', 128, '1971-01-01', 10.00, '/images/L07.jpg', 'Disponible'),
+(8, 'La verdad sobre el caso Harry Quebert', 8, 'Policíaco', 'Alfaguara', 672, '2012-01-01', 12.95, '/images/L08.jpg', 'Disponible'),
+(9, 'La sociedad literaria y el pastel de piel de patata de Guernsey', 9, 'Novela epistolar', 'Salamandra', 274, '2007-01-01', 10.00, '/images/L09.jpg', 'Disponible'),
+(10, 'El mar', 10, 'Fantástico', 'SM', 260, '2015-01-01', 12.95, '/images/L10.jpg', 'Disponible'),
+(11, 'El curioso incidente del perro a medianoche', 11, 'Novela', 'Salamandra', 270, '2003-01-01', 10.00, '/images/L11.jpg', 'Disponible'),
+(12, 'La hija del mar', 12, 'Fantástico', 'SM', 112, '1996-01-01', 10.00, '/images/L12.jpg', 'Disponible'),
+(13, 'Orgullo y prejuicio', 13, 'Novela', 'Penguin', 448, '1813-01-01', 12.00, '/images/L13.jpg', 'Disponible'),
+(14, 'Martes con mi viejo profesor', 14, 'Novela biográfica', 'Maeva', 143, '1997-01-01', 13.00, '/images/L14.jpg', 'Disponible'),
+(15, 'Desconocidos', 15, 'Policíaco', 'Edebé', 221, '2018-01-01', 12.00, '/images/L15.jpg', 'Disponible'),
+(16, 'Nunca seré tu héroe', 16, 'Novela', 'SM', 192, '1998-01-01', 10.95, '/images/L16.jpg', 'Disponible'),
+(17, 'Crónica de una muerte anunciada', 17, 'Policíaco', 'Debolsillo', 156, '1981-01-01', 9.95, '/images/L17.jpg', 'Disponible'),
+(18, 'El nombre del viento', 18, 'Fantástico', 'Debolsillo', 880, '2007-01-01', 22.00, '/images/L18.jpg', 'Disponible'),
+(19, 'La historia interminable', 19, 'Fantástico', 'Alfaguara', 496, '1979-01-01', 15.00, '/images/L19.jpg', 'Disponible'),
+(20, 'La ley de la calle', 4, 'Drama', 'Alfaguara', 112, '1975-01-01', 10.00, '', 'Disponible'),
+(21, 'Nacidos de la bruma: El imperio final', 20, 'Fantástico', 'Nova', 841, '2006-01-01', 20.00, '/images/L20.jpg', 'Disponible'),
+(22, '¿Sueñan los androides con ovejas eléctricas?', 21, 'Ciencia ficción', 'Minotauro', 272, '1968-01-01', 10.00, '/images/L21.jpg', 'Disponible'),
+(23, 'El príncipe de la niebla', 22, 'Fantástico', 'Edebé', 240, '1993-01-01', 14.00, '/images/L22.jpg', 'Disponible'),
+(24, 'La leyenda del rey errante', 23, 'Fantástico', 'SM', 560, '2004-01-01', 21.00, '/images/L23.jpg', 'Disponible'),
+(25, 'La isla del tesoro', 24, 'Aventuras', 'Edelvives', 288, '1883-01-01', 24.90, '/images/L24.jpg', 'Disponible'),
+(26, 'Matilda', 25, 'Infantil', 'Loqueleo', 288, '1988-01-01', 10.00, '', 'Disponible'),
+(27, 'El gran Gatsby', 26, 'Drama', 'Austral', 224, '1925-01-01', 11.50, '', 'Disponible'),
+(28, 'Fahrenheit 451', 27, 'Ciencia ficción', 'Debolsillo', 192, '1953-01-01', 12.50, '', 'Disponible'),
+(29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -158,6 +160,7 @@ CREATE TABLE `PELICULAS` (
   `GENERO` varchar(15) COLLATE utf8_bin DEFAULT NULL,
   `TIPO_ADAPTACION` varchar(8) COLLATE utf8_bin DEFAULT NULL,
   `ADAPTACION_ID` int(2) DEFAULT NULL,
+  `IMAGEN` varchar(250) COLLATE utf8_bin NOT NULL,
   `ESTADO` varchar(10) COLLATE utf8_bin NOT NULL DEFAULT 'Disponible'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -165,37 +168,37 @@ CREATE TABLE `PELICULAS` (
 -- Volcado de datos para la tabla `PELICULAS`
 --
 
-INSERT INTO `PELICULAS` (`ID`, `TITULO`, `AÑO_ESTRENO`, `DIRECTOR`, `ACTORES`, `GENERO`, `TIPO_ADAPTACION`, `ADAPTACION_ID`, `ESTADO`) VALUES
-(1, 'El editor de libros', '2016-01-01', 'Michael Grandage', 'Colin Firth, Jude Law, Nicole Kidman', 'Biografía', 'Película', NULL, 'Reservado'),
-(2, 'La historia interminable', '1984-01-01', 'Wolfgang Petersen', 'Barret Oliver, Noah Hathaway, Moses Gunn', 'Fantasía', 'Película', 19, 'Disponible'),
-(3, 'La ladrona de libros', '2013-01-01', 'Brian Percival', 'Sophie Nélisse, Geoffrey Rush, Emily Watson, Nico Liersch', 'Drama', 'Película', NULL, 'Disponible'),
-(4, 'La bruja novata', '1971-01-01', 'Robert Stevenson', 'Angela Lansbury, David Tomlinson, Roddy McDowall', 'Fantasía', 'Película', NULL, 'Disponible'),
-(5, 'Harry Potter y el prisionero de Azkaban', '2004-01-01', 'Alfonso Cuarón', 'Daniel Radcliffe, Rupert Grint, Emma Watson', 'Fantasía', 'Película', 5, 'Disponible'),
-(6, 'El señor de los anillos: La comunidad del anillo', '2001-01-01', 'Peter Jackson', 'Elijah Wood, Ian McKellen, Viggo Mortensen', 'Fantasía', 'Película', 1, 'Disponible'),
-(7, 'Charlie y la fábrica de chocolate', '2005-01-01', 'Tim Burton', 'Johnny Depp, Freddie Highmore, David Kelly, Deep Roy', 'Fantasía', 'Película', NULL, 'Disponible'),
-(8, 'Las Crónicas de Narnia: El león, la bruja y el armario', '2005-01-01', 'Andrew Adamson', 'Georgie Henley, William Moseley, Skandar Keynes, Anna Popplewell, Tilda Swinton', 'Fantasía', 'Película', NULL, 'Disponible'),
-(9, 'Rebeldes', '1983-01-01', 'Francis Ford Coppola', 'C. Thomas Howell, Matt Dillon, Ralph Macchio, Diane Lane, Rob Lowe, Patrick Swayze, Emilio Estévez, Tom Cruise', 'Drama', 'Película', 4, 'Disponible'),
-(10, 'Juego de Tronos: Temporada 1', '2011-01-01', 'David Benioff, D.B. Weiss', 'Emilia Clarke, Kit Harington, Lena Headey, Peter Dinklage, Maisie Williams, Nikolaj Coster-Waldau, Sophie Turner', 'Fantasía', 'Serie', 6, 'Disponible'),
-(11, 'La verdad sobre el caso Harry Quebert', '2018-01-01', 'Jean-Jacques Annaud', 'Patrick Dempsey, Ben Schnetzer, Kristine Froseth, Damon Wayans Jr.', 'Policíaco', 'Serie', 8, 'Disponible'),
-(12, 'La sociedad literaria y el pastel de piel de patata de Guernsey', '2018-01-01', 'Mike Newell', 'Lily James, Michiel Huisman, Glen Powell, Jessica Brown Findlay, Matthew Goode', 'Drama', 'Película', 9, 'Disponible'),
-(13, 'Orgullo y prejuicio', '2005-01-01', 'Joe Wright', 'Keira Knightley, Matthew Macfadyen, Brenda Blethyn, Donald Sutherland', 'Romance', 'Película', 13, 'Disponible'),
-(14, 'Orgullo y prejuicio', '1995-01-01', 'Simon Langton', 'Colin Firth, Jennifer Ehle, David Bamber, Crispin Bonham-carter, Anna Chancellor', 'Romance', 'Serie', 13, 'Disponible'),
-(15, 'Crónica de una muerte anunciada', '1987-01-01', 'Francesco Rosi', 'Anthony Delon, Rupert Everett, Lucía Bosé, Ornella Muti, Gian Maria Volonté', 'Drama', 'Película', NULL, 'Disponible'),
-(16, 'La ley de la calle', '1983-01-01', 'Francis Ford Coppola', 'Matt Dillon, Mickey Rourke, Diane Lane, Dennis Hopper, Nicolas Cage', 'Drama', 'Película', 20, 'Disponible'),
-(17, 'Blade Runner', '1982-01-01', 'Ridley Scott', 'Harrison Ford, Rutger Hauer, Sean Young, Daryl Hannah, Edward James Olmos', 'Ciencia ficción', 'Película', 22, 'Disponible'),
-(18, 'La isla del tesoro', '1934-01-01', 'Victor Fleming', 'Jackie Cooper, Wallace Beery, Lewis Stone, Lionel Barrymore, Otto Kruger', 'Aventuras', 'Película', 25, 'Disponible'),
-(19, 'La isla del tesoro', '1950-01-01', 'Byron Haskin', 'Bobby Driscoll, Robert Newton, Basil Sydney, Walter Fitzgerald, Denis O\'Dea', 'Aventuras', 'Película', 25, 'Disponible'),
-(20, 'La isla del tesoro', '1990-01-01', 'Fraser Clarke Heston', 'Charlton Heston, Christian Bale, Oliver Reed, Christopher Lee, Richard Johnson', 'Aventuras', 'Serie', 25, 'Disponible'),
-(21, 'Matilda', '1996-01-01', 'Danny DeVito', 'Mara Wilson, Danny DeVito, Rhea Perlman, Embeth Davidtz, Pam Ferris', 'Infantil', 'Película', NULL, 'Disponible'),
-(22, 'Un mundo de fantasía', '1971-01-01', 'Mel Stuart', 'Gene Wilder, Jack Albertson, Peter Ostrum, Roy Kinnear, Michael Bollner', 'Infantil', 'Película', NULL, 'Disponible'),
-(23, 'Por quién doblan las campanas', '1943-01-01', 'Sam Wood', 'Gary Cooper, Ingrid Bergman, Akim Tamiroff, Arturo de Córdova, Vladimir Sokoloff', 'Drama', 'Película', NULL, 'Disponible'),
-(24, 'Harry Potter y el cáliz de fuego', '2005-01-01', 'Mike Newell', 'Daniel Radcliffe, Rupert Grint, Emma Watson, Robbie Coltrane, Michael Gambon', 'Fantasía', 'Película', NULL, 'Disponible'),
-(25, 'El gran Gatsby', '1949-01-01', 'Elliott Nugent', 'Alan Ladd, Betty Field, Macdonald Carey, Ruth Hussey, Barry Sullivan', 'Drama', 'Película', 27, 'Disponible'),
-(26, 'El gran Gatsby', '1974-01-01', 'Jack Clayton', 'Robert Redford, Mia Farrow, Bruce Dern, Karen Black, Scott Wilson', 'Drama', 'Película', 27, 'Disponible'),
-(27, 'El gran Gatsby', '2000-01-01', 'Robert Markowitz', 'Mira Sorvino, Toby Stephens, Paul Rudd, Martin Donovan, Francie Swift', 'Drama', 'Serie', 27, 'Disponible'),
-(28, 'El gran Gatsby', '2013-01-01', 'Baz Luhrmann', 'Leonardo DiCaprio, Tobey Maguire, Carey Mulligan, Joel Edgerton, Isla Fisher', 'Drama', 'Película', 27, 'Disponible'),
-(29, 'Fahrenheit 451', '1966-01-01', 'François Truffaut', 'Julie Christie, Oskar Werner, Cyril Cusack, Anton Diffring, Jeremy Spenser, Ann Bell', 'Ciencia ficción', 'Película', 26, 'Disponible'),
-(30, 'Fahrenheit 451', '2018-01-01', 'Ramin Bahrani', 'Michael B. Jordan, Michael Shannon, Sofia Boutella, Laura Harrier, Lilly Singh', 'Ciencia ficción', 'Película', 26, 'Disponible');
+INSERT INTO `PELICULAS` (`ID`, `TITULO`, `AÑO_ESTRENO`, `DIRECTOR`, `ACTORES`, `GENERO`, `TIPO_ADAPTACION`, `ADAPTACION_ID`, `IMAGEN`, `ESTADO`) VALUES
+(1, 'El editor de libros', '2016-01-01', 'Michael Grandage', 'Colin Firth, Jude Law, Nicole Kidman', 'Biografía', 'Película', NULL, '/images/P01.jpg', 'Disponible'),
+(2, 'La historia interminable', '1984-01-01', 'Wolfgang Petersen', 'Barret Oliver, Noah Hathaway, Moses Gunn', 'Fantasía', 'Película', 19, '/images/P02.jpg', 'Disponible'),
+(3, 'La ladrona de libros', '2013-01-01', 'Brian Percival', 'Sophie Nélisse, Geoffrey Rush, Emily Watson, Nico Liersch', 'Drama', 'Película', NULL, '/images/P03.jpg', 'Disponible'),
+(4, 'La bruja novata', '1971-01-01', 'Robert Stevenson', 'Angela Lansbury, David Tomlinson, Roddy McDowall', 'Fantasía', 'Película', NULL, '/images/P04.jpg', 'Disponible'),
+(5, 'Harry Potter y el prisionero de Azkaban', '2004-01-01', 'Alfonso Cuarón', 'Daniel Radcliffe, Rupert Grint, Emma Watson', 'Fantasía', 'Película', 5, '/images/P05.jpg', 'Disponible'),
+(6, 'El señor de los anillos: La comunidad del anillo', '2001-01-01', 'Peter Jackson', 'Elijah Wood, Ian McKellen, Viggo Mortensen', 'Fantasía', 'Película', 1, '/images/P06.jpg', 'Disponible'),
+(7, 'Charlie y la fábrica de chocolate', '2005-01-01', 'Tim Burton', 'Johnny Depp, Freddie Highmore, David Kelly, Deep Roy', 'Fantasía', 'Película', NULL, '/images/P07.jpg', 'Disponible'),
+(8, 'Las Crónicas de Narnia: El león, la bruja y el armario', '2005-01-01', 'Andrew Adamson', 'Georgie Henley, William Moseley, Skandar Keynes, Anna Popplewell, Tilda Swinton', 'Fantasía', 'Película', NULL, '/images/P08.jpg', 'Disponible'),
+(9, 'Rebeldes', '1983-01-01', 'Francis Ford Coppola', 'C. Thomas Howell, Matt Dillon, Ralph Macchio, Diane Lane, Rob Lowe, Patrick Swayze, Emilio Estévez, Tom Cruise', 'Drama', 'Película', 4, '/images/P09.jpg', 'Disponible'),
+(10, 'Juego de Tronos: Temporada 1', '2011-01-01', 'David Benioff, D.B. Weiss', 'Emilia Clarke, Kit Harington, Lena Headey, Peter Dinklage, Maisie Williams, Nikolaj Coster-Waldau, Sophie Turner', 'Fantasía', 'Serie', 6, '/images/P10.jpg', 'Disponible'),
+(11, 'La verdad sobre el caso Harry Quebert', '2018-01-01', 'Jean-Jacques Annaud', 'Patrick Dempsey, Ben Schnetzer, Kristine Froseth, Damon Wayans Jr.', 'Policíaco', 'Serie', 8, '/images/P11.jpg', 'Disponible'),
+(12, 'La sociedad literaria y el pastel de piel de patata de Guernsey', '2018-01-01', 'Mike Newell', 'Lily James, Michiel Huisman, Glen Powell, Jessica Brown Findlay, Matthew Goode', 'Drama', 'Película', 9, '/images/P12.jpg', 'Disponible'),
+(13, 'Orgullo y prejuicio', '2005-01-01', 'Joe Wright', 'Keira Knightley, Matthew Macfadyen, Brenda Blethyn, Donald Sutherland', 'Romance', 'Película', 13, '/images/P13.jpg', 'Disponible'),
+(14, 'Orgullo y prejuicio', '1995-01-01', 'Simon Langton', 'Colin Firth, Jennifer Ehle, David Bamber, Crispin Bonham-carter, Anna Chancellor', 'Romance', 'Serie', 13, '/images/P14.jpg', 'Disponible'),
+(15, 'Crónica de una muerte anunciada', '1987-01-01', 'Francesco Rosi', 'Anthony Delon, Rupert Everett, Lucía Bosé, Ornella Muti, Gian Maria Volonté', 'Drama', 'Película', NULL, '/images/P15.jpg', 'Disponible'),
+(16, 'La ley de la calle', '1983-01-01', 'Francis Ford Coppola', 'Matt Dillon, Mickey Rourke, Diane Lane, Dennis Hopper, Nicolas Cage', 'Drama', 'Película', 20, '/images/P16.jpg', 'Disponible'),
+(17, 'Blade Runner', '1982-01-01', 'Ridley Scott', 'Harrison Ford, Rutger Hauer, Sean Young, Daryl Hannah, Edward James Olmos', 'Ciencia ficción', 'Película', 22, '/images/P17.jpg', 'Disponible'),
+(18, 'La isla del tesoro', '1934-01-01', 'Victor Fleming', 'Jackie Cooper, Wallace Beery, Lewis Stone, Lionel Barrymore, Otto Kruger', 'Aventuras', 'Película', 25, '/images/P18.jpg', 'Disponible'),
+(19, 'La isla del tesoro', '1950-01-01', 'Byron Haskin', 'Bobby Driscoll, Robert Newton, Basil Sydney, Walter Fitzgerald, Denis O\'Dea', 'Aventuras', 'Película', 25, '/images/P19.jpg', 'Disponible'),
+(20, 'La isla del tesoro', '1990-01-01', 'Fraser Clarke Heston', 'Charlton Heston, Christian Bale, Oliver Reed, Christopher Lee, Richard Johnson', 'Aventuras', 'Serie', 25, '/images/P20.jpg', 'Disponible'),
+(21, 'Matilda', '1996-01-01', 'Danny DeVito', 'Mara Wilson, Danny DeVito, Rhea Perlman, Embeth Davidtz, Pam Ferris', 'Infantil', 'Película', NULL, '/images/P21.jpg', 'Disponible'),
+(22, 'Un mundo de fantasía', '1971-01-01', 'Mel Stuart', 'Gene Wilder, Jack Albertson, Peter Ostrum, Roy Kinnear, Michael Bollner', 'Infantil', 'Película', NULL, '/images/P22.jpg', 'Disponible'),
+(23, 'Por quién doblan las campanas', '1943-01-01', 'Sam Wood', 'Gary Cooper, Ingrid Bergman, Akim Tamiroff, Arturo de Córdova, Vladimir Sokoloff', 'Drama', 'Película', NULL, '/images/P23.jpg', 'Disponible'),
+(24, 'Harry Potter y el cáliz de fuego', '2005-01-01', 'Mike Newell', 'Daniel Radcliffe, Rupert Grint, Emma Watson, Robbie Coltrane, Michael Gambon', 'Fantasía', 'Película', NULL, '/images/P24.jpg', 'Disponible'),
+(25, 'El gran Gatsby', '1949-01-01', 'Elliott Nugent', 'Alan Ladd, Betty Field, Macdonald Carey, Ruth Hussey, Barry Sullivan', 'Drama', 'Película', 27, '/images/P25.jpg', 'Disponible'),
+(26, 'El gran Gatsby', '1974-01-01', 'Jack Clayton', 'Robert Redford, Mia Farrow, Bruce Dern, Karen Black, Scott Wilson', 'Drama', 'Película', 27, '', 'Disponible'),
+(27, 'El gran Gatsby', '2000-01-01', 'Robert Markowitz', 'Mira Sorvino, Toby Stephens, Paul Rudd, Martin Donovan, Francie Swift', 'Drama', 'Serie', 27, '', 'Disponible'),
+(28, 'El gran Gatsby', '2013-01-01', 'Baz Luhrmann', 'Leonardo DiCaprio, Tobey Maguire, Carey Mulligan, Joel Edgerton, Isla Fisher', 'Drama', 'Película', 27, '', 'Disponible'),
+(29, 'Fahrenheit 451', '1966-01-01', 'François Truffaut', 'Julie Christie, Oskar Werner, Cyril Cusack, Anton Diffring, Jeremy Spenser, Ann Bell', 'Ciencia ficción', 'Película', 26, '', 'Disponible'),
+(30, 'Fahrenheit 451', '2018-01-01', 'Ramin Bahrani', 'Michael B. Jordan, Michael Shannon, Sofia Boutella, Laura Harrier, Lilly Singh', 'Ciencia ficción', 'Película', 26, '', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -215,65 +218,7 @@ CREATE TABLE `RESERVAS` (
 --
 
 INSERT INTO `RESERVAS` (`ID`, `ID_LIBRO`, `ID_PELICULA`, `FECHA_RESERVA`) VALUES
-(1, 4, 16, '2026-01-28'),
-(1, NULL, 1, '2026-04-15'),
-(1, NULL, 3, '2026-04-15'),
-(1, NULL, 3, '2026-04-15'),
-(1, NULL, 1, '2026-04-20'),
-(1, NULL, 1, '2026-04-20'),
-(1, NULL, 1, '2026-04-20'),
-(1, NULL, 1, '2026-04-20'),
-(2, NULL, 12, '2026-04-20'),
-(1, NULL, 11, '2026-04-20'),
-(2, NULL, 11, '2026-04-20'),
-(2, NULL, 11, '2026-04-20'),
-(2, NULL, 7, '2026-04-20'),
-(1, NULL, 1, '2026-04-21'),
-(1, NULL, 1, '2026-04-21'),
-(1, NULL, 1, '2026-04-21'),
-(1, NULL, 1, '2026-04-21'),
-(1, 1, NULL, '2026-04-21'),
-(1, NULL, 1, '2026-04-21'),
-(2, NULL, 1, '2026-04-21'),
-(2, NULL, 1, '2026-04-21'),
-(2, NULL, 1, '2026-04-21'),
-(1, NULL, 1, '2026-04-21'),
-(2, NULL, 1, '2026-04-21'),
-(2, NULL, 13, '2026-04-21'),
-(1, NULL, 2, '2026-04-21'),
-(2, NULL, 2, '2026-04-21'),
-(2, NULL, 2, '2026-04-21'),
-(2, NULL, 5, '2026-04-21'),
-(1, NULL, 28, '2026-04-21'),
-(2, NULL, 1, '2026-04-21'),
-(2, NULL, 1, '2026-04-21'),
-(1, 1, NULL, '2026-04-21'),
-(2, NULL, 3, '2026-04-22'),
-(2, NULL, 3, '2026-04-22'),
-(2, NULL, 3, '2026-04-22'),
-(2, NULL, 3, '2026-04-22'),
-(1, 28, NULL, '2026-04-22'),
-(2, 10, NULL, '2026-04-22'),
-(2, NULL, 2, '2026-04-22'),
-(2, NULL, 2, '2026-04-22'),
-(2, NULL, 2, '2026-04-22'),
-(2, 11, NULL, '2026-04-22'),
-(2, 8, NULL, '2026-04-22'),
-(2, 3, NULL, '2026-04-22'),
-(2, 5, NULL, '2026-04-22'),
-(2, 5, NULL, '2026-04-22'),
-(2, 5, NULL, '2026-04-22'),
-(2, 5, NULL, '2026-04-22'),
-(2, 5, NULL, '2026-04-22'),
-(2, 5, NULL, '2026-04-22'),
-(1, 4, NULL, '2026-04-22'),
-(2, NULL, 1, '2026-04-22'),
-(1, 6, NULL, '2026-04-22'),
-(1, 1, NULL, '2026-04-22'),
-(1, 2, NULL, '2026-04-22'),
-(2, 1, NULL, '2026-04-22'),
-(1, NULL, 1, '2026-04-22'),
-(1, NULL, 1, '2026-04-22');
+(1, 4, 16, '2026-01-28');
 
 -- --------------------------------------------------------
 
@@ -361,7 +306,7 @@ ALTER TABLE `CLIENTES`
 -- AUTO_INCREMENT de la tabla `LIBROS`
 --
 ALTER TABLE `LIBROS`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `PELICULAS`
