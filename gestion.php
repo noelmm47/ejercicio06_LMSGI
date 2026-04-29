@@ -2,6 +2,10 @@
 include "conexion_bbdd.php";
 header('Content-Type: text/html; charset=UTF-8');
 
+	session_start();
+	if (!isset($_SESSION['USER']))
+			header ("Location: login.html");
+
 $tipo = $_GET["tipo"] ?? $_POST["acceso"] ?? "libros";
 
 // entramos por insertar o editar

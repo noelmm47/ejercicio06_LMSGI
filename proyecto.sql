@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: bbdd
--- Tiempo de generación: 29-04-2026 a las 16:14:33
+-- Tiempo de generación: 29-04-2026 a las 16:47:04
 -- Versión del servidor: 5.7.44
 -- Versión de PHP: 8.3.26
 
@@ -88,8 +88,8 @@ CREATE TABLE `CLIENTES` (
 --
 
 INSERT INTO `CLIENTES` (`ID`, `NOMBRE`, `APELLIDOS`, `DNI`, `DIRECCION`, `POBLACION`) VALUES
-(1, 'Lorena', 'FernÃ¡ndez', '09098098X', 'Calle Sol', 'Haiti'),
-(2, 'Gonzalo', 'Sanchez', '33333333Z', 'c/asdfg', 'Grado');
+(1, 'Lorena', 'Fernández', '09098098X', 'Calle Sol', 'Haiti'),
+(2, 'Gonzalo', 'Sánchez', '33333333Z', 'c/asdfg', 'Grado');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ CREATE TABLE `LIBROS` (
 --
 
 INSERT INTO `LIBROS` (`ID`, `TITULO`, `AUTOR_ID`, `GENERO`, `EDITORIAL`, `PAGINAS`, `AÑO`, `PRECIO`, `IMAGEN`, `ESTADO`) VALUES
-(1, 'El Señor de los anillos: La comunidad del anillo', 1, 'Fantástico', 'Minotauro', 488, '1954-01-01', 18.00, 'images/L01.jpg', 'Disponible'),
+(1, 'El Señor de los anillos: La comunidad del anillo', 1, 'Fantástico', 'Minotauro', 488, '1954-01-01', 18.00, 'images/L01.jpg', 'Reservado'),
 (2, 'El viejo y el mar', 2, 'Novela', 'Debolsillo', 208, '1952-01-01', 10.95, 'images/L02.jpg', 'Disponible'),
 (3, 'Las Crónicas de Narnia: El león, la bruja y el armario', 3, 'Fantástico', 'Destino', 240, '1950-01-01', 15.00, 'images/L03.jpg', 'Disponible'),
 (4, 'Rebeldes', 4, 'Drama', 'Alfaguara', 224, '1967-01-01', 12.00, 'images/L04.jpg', 'Disponible'),
@@ -218,6 +218,9 @@ CREATE TABLE `RESERVAS` (
 
 INSERT INTO `RESERVAS` (`ID`, `ID_LIBRO`, `ID_PELICULA`, `FECHA_RESERVA`) VALUES
 (1, 4, 16, '2026-01-28'),
+(1, 1, NULL, '2026-04-29'),
+(2, 1, NULL, '2026-04-29'),
+(2, 1, NULL, '2026-04-29'),
 (1, 1, NULL, '2026-04-29');
 
 -- --------------------------------------------------------

@@ -2,6 +2,10 @@
 include "conexion_bbdd.php";
 header('Content-Type: text/html; charset=UTF-8');
 
+	session_start();
+	if (!isset($_SESSION['USER']))
+			header ("Location: login.html");
+
 $tipo = $_POST["acceso"] ?? $_GET["tipo"] ?? "libros";
 
 // borramos libros o películas y recargamos la página
@@ -125,9 +129,9 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
                         if (!empty($imagen) && file_exists("./" . $imagen)) {
                             echo '<img src="' . $imagen . '" alt="Portada libro" width="80">'; 
                         }
-                    ?>
+                    ?><br>
 
-                    <?= $item["TITULO"] ?><br>
+                    <b><?= $item["TITULO"] ?></b><br>
                     Autor: <?= $item["NOMBRE_AUTOR"] ?><br> <!-- nombre del autor, no su id -->
                     Género: <?= $item["GENERO"] ?><br>
                     Editorial: <?= $item["EDITORIAL"] ?><br>
@@ -147,9 +151,9 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
                         if (!empty($imagen) && file_exists("./" . $imagen)) {
                             echo '<img src="' . $imagen . '" alt="Portada película" width="80">';
                         }
-                    ?>
+                    ?><br>
 
-                    <?= $item["TITULO"] ?><br>
+                    <b><?= $item["TITULO"] ?></b><br>
                     Año: <?= $anio ?><br>
                     Director: <?= $item["DIRECTOR"] ?><br>
                     Actores: <?= $item["ACTORES"] ?><br>
@@ -158,15 +162,14 @@ $listaLibros  = $conexion->query("SELECT ID, TITULO FROM LIBROS ORDER BY TITULO"
 
                 <?php endif; ?>
 
-                <a href="gestion.php?tipo=<?= $tipo ?>&editar=<?= $item["ID"] ?>"> Editar </a>  | <!-- enlaces para editar, borrar o reservar -->
-                <a href="productos.php?tipo=<?= $tipo ?>&borrar=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres borrar?')"> Borrar </a>  | <!-- pedimos confirmacion -->
-                
-                <?php echo $item["ESTADO"] ?><br>
-
+                <a href="gestion.php?tipo=<?= $tipo ?>&editar=<?= $item["ID"] ?>"> Editar </a>   | <!-- enlaces para editar, borrar o reservar -->
+                <a href="productos.php?tipo=<?= $tipo ?>&borrar=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres borrar?')"> Borrar </a> <!-- pedimos confirmacion -->
+                <br>
+                <?php echo $item["ESTADO"] ?> |
                 <?php if ($item["ESTADO"] != "Reservado"): ?>
-                    <a href="eleccion.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar </a>
+                    <a href="eleccion.php?tipo=<?= $tipo ?>&id=<?= $item["ID"] ?>"> Reservar </a><br><br><br>
                 <?php else: ?>
-                    <a href="productos.php?tipo=<?= $tipo ?>&devolver=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres devolverlo?')"> Devolver </a>
+                    <a href="productos.php?tipo=<?= $tipo ?>&devolver=<?= $item["ID"] ?>" onclick="return confirm('¿Seguro que quieres devolverlo?')"> Devolver </a><br><br><br>
                 <?php endif; ?>
             </li>
 

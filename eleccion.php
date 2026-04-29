@@ -1,6 +1,8 @@
 <?php
 
     include "conexion_bbdd.php";
+	header('Content-Type: text/html; charset=UTF-8');
+
 	
 	session_start();
 	if (!isset($_SESSION['USER']))
@@ -16,10 +18,10 @@
     $clientes = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
 
-<html>
+<html lang="es">
 
     <head>
-        <meta charset="UTF-8">
+        <!-- <meta charset="UTF-8"> -->
         <title>Elegir cliente</title>
     </head>
 
