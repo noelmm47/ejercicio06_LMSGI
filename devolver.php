@@ -1,4 +1,4 @@
-<?php
+<?php <!-- en desuso -->
 
 include "conexion_bbdd.php";
 
